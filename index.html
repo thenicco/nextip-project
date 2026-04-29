@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexTIP - Gorjetas </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <section class="container">
+        <h1 class="brand">
+    <img src="assets/imgs/logo.png" alt="NexTIP Logo" class="logo-img">
+    NexTIP
+</h1>
+        
+        <form id="tip-form">
+            <div class="input-group">
+                <label for="bill">Valor da conta (R$):</label>
+                <input type="number" id="bill" step="0.01" placeholder="Ex: 150.00" required>
+            </div>
+
+            <div class="input-group">
+                <label for="service-qual">Qualidade do Serviço:</label>
+                <select id="service-qual">
+                    <option value="0.3">30% (Incrivel!)</option>
+                    <option value="0.2">20% (Muito Bom)</option>
+                    <option value="0.1" selected>10% (Padrão)</option>
+                    <option value="0.05">5% (Ruim)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="people">Dividir para quantas pessoas?</label>
+                <input type="number" id="people" placeholder="Ex: 2" required>
+            </div>
+
+            <button type="submit" id="calculate">Calcular NexTIP</button>
+
+        </form>
+
+        <div id="result-area" class="hidden">
+            <p> Gorjeta Total: <span id="tip-amount">R$ 0.00</span></p>
+            <p><strong>Total com Gorjeta: <span id="total-bill">R$ 0.00</span></strong></p>
+            <p> Total por Pessoa: <span id="total-per-person">R$ 0.00</span></p>
+            
+            
+        <div>
+            <h3> Hitórico de Cálculos </h3>
+            <ul id="lista-hitórico">
+
+            </ul>
+        </div>
+        </div>
+
+
+
+    </section>
+    
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
