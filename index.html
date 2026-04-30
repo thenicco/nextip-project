@@ -9,53 +9,85 @@
 
 <body>
     <section class="container">
-        <h1 class="brand">
-    <img src="assets/imgs/logo.png" alt="NexTIP Logo" class="logo-img">
-    NexTIP
-</h1>
+    <h1 class="brand">
+        <img src="assets/imgs/logo.png" alt="NexTIP Logo" class="logo-img">
+        NexTIP
+    </h1>
+
+ 
+    <main class="calculator-grid">
         
-        <form id="tip-form">
-            <div class="input-group">
-                <label for="bill">Valor da conta (R$):</label>
-                <input type="number" id="bill" step="0.01" placeholder="Ex: 150.00" required>
-            </div>
+        <!--  -->
+        <section class="column setup-column">
+            <h3>Dados da conta</h3>
+            <form id="tip-form">
+                <div class="input-group">
+                    <label for="bill">Valor da conta (R$):</label>
+                    <input type="number" id="bill" step="0.01" placeholder="250,00" required>
+                </div>
 
-            <div class="input-group">
-                <label for="service-qual">Qualidade do Serviço:</label>
-                <select id="service-qual">
-                    <option value="0.3">30% (Incrivel!)</option>
-                    <option value="0.2">20% (Muito Bom)</option>
-                    <option value="0.1" selected>10% (Padrão)</option>
-                    <option value="0.05">5% (Ruim)</option>
-                </select>
-            </div>
+                <label>Qualidade do serviço:</label>
+                <div class="tip-options">
+                    <button type="button" class="tip-btn" data-percent="0.05">5%</button>
+                    <button type="button" class="tip-btn" data-percent="0.10">10%</button>
+                    <button type="button" class="tip-btn active" data-percent="0.15">15%</button>
+                    <button type="button" class="tip-btn" data-percent="0.20">20%</button>
+                    <button type="button" class="tip-btn" id="custom-tip">Outro</button>
+                </div>
 
-            <div class="input-group">
-                <label for="people">Dividir para quantas pessoas?</label>
-                <input type="number" id="people" placeholder="Ex: 2" required>
-            </div>
-
-            <button type="submit" id="calculate">Calcular NexTIP</button>
-
-        </form>
-
-        <div id="result-area" class="hidden">
-            <p> Gorjeta Total: <span id="tip-amount">R$ 0.00</span></p>
-            <p><strong>Total com Gorjeta: <span id="total-bill">R$ 0.00</span></strong></p>
-            <p> Total por Pessoa: <span id="total-per-person">R$ 0.00</span></p>
+                <label>Dividir para quantas pessoas?</label>
+                <div class="people-counter">
+                    <button type="button" id="btn-minus">—</button>
+                    <input type="number" id="people" value="1" readonly>
+                    <button type="button" id="btn-plus">+</button>
+                </div>
+            </form>
             
-            
-        <div>
-            <h3> Hitórico de Cálculos </h3>
-            <ul id="lista-hitórico">
+            <div class="tip-box">
+                <p>💡 <strong>Dica:</strong> 10% é o padrão mais comum em serviços de qualidade.</p>
+            </div>
+        </section>
 
-            </ul>
-        </div>
-        </div>
+        <!-- Resultados Detalhados -->
+        <section class="column results-column">
+            <h3>Resultado</h3>
+            <div class="result-item">
+                <span>Gorjeta</span>
+                <span id="tip-amount" class="highlight-green">R$ 0.00</span>
+            </div>
+            <div class="result-item">
+                <span>Total com gorjeta</span>
+                <span id="total-bill" class="highlight-green">R$ 0.00</span>
+            </div>
 
+            <div class="actions">
+                <button type="submit" form="tip-form" class="calculate">Dividir conta</button>
+            </div>
+        </section>
 
+        <!--  Resumo -->
+<section class="summary-card">
+    <h3>Resumo</h3>
+    <div class="summary-info">
+        <div class="info-row"><span>Conta</span> <strong id="summary-bill">R$ 0.00</strong></div>
+        <div class="info-row"><span>Gorjeta (<span id="summary-tip-percent">15</span>%)</span> <strong id="summary-tip-value">R$ 0.00</strong></div>
+        <div class="info-row"><span>Pessoas</span> <strong id="summary-people">1</strong></div>
+    </div>
+    
+    <div class="per-person-box">
+        <span>Total por pessoa</span>
+        <h2 id="total-per-person">R$ 0.00</h2>
+    </div>
+</section>
 
-    </section>
+    </main>
+
+    <!-- Histórico -->
+    <footer class="history-area">
+        <h3>Histórico de Cálculos</h3>
+        <ul id="lista-hitórico"></ul>
+    </footer>
+</section>
     
     <script src="./src/js/main.js"></script>
 </body>

@@ -19,36 +19,37 @@ body {
 }
 
 .container {
-    background-color: #1e2e3a;
+    background-color: #11242e;
     border-radius: 20px;
     padding: 30px;
 
 
 }
 
-.container button {
-    background-color: #33b854 ;
+
+#bill, #people {
+    background-color: #0d1920; /* Fundo escuro */
+    color: #e6eaed;            /* Texto branco ao digitar */
     border: none;
-    border-radius: 8px;
     padding: 15px;
-    width: 100%;
-    cursor: pointer;
+    border-radius: 8px;
 }
 
 input, select {
-    background-color: #0e1c24; 
-    color: #1b9651;           
+    color: #e6eaed
     border: none;            
     padding: 10px;            
     border-radius: 8px;       
     outline: none;         
-    width: 100%;            
+    width: 100%;     
+    margin-top: 15px;       
     margin-bottom: 15px;   
 }
 
 /* Para mudar a cor do texto de exemplo (Ex: 150.00) */
 input::placeholder {
-    color: #1b9651;             
+    font-weight: bold;
+    color: #e6eaed;             
 }
 
 .brand {
@@ -57,7 +58,7 @@ input::placeholder {
     gap: 12px;
 
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+    font-weight: bold;
     color:#e6eaed;
     font-size: 2.5rem;
     line-height: 1;
@@ -66,4 +67,169 @@ input::placeholder {
 .logo-img {
     width: auto;
     height: 50px;
+}
+
+.tip-options {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap
+}
+
+.calculate {
+    background-color: #33b854;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.tip-btn {
+    flex: 1;
+    background-color: #101d26;
+    color: #e6eaed;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+}
+
+.tip-btn.active {
+    background-color: #33b854 !important;
+    color: #101d26;
+    font-weight: bold;
+
+}
+
+.calculator-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px; /* Cria um corredor de espaço entre as colunas */
+    padding: 30px; /* Afasta o conteúdo das bordas do card principal */
+}
+
+.people-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #101d26;
+    border-radius: 8px;
+    padding: 5px 10px;
+    gap: 15px;
+    width: fit-content; 
+    margin-top: 10px;
+}
+
+#people {
+    
+    color: #e6eaed;
+    width: 30px;
+    text-align: center;
+    font-size: 15px;
+    margin: 0; 
+}
+
+.people-counter button {
+    background: transparent;
+    color: #e6eaed;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.people-counter input {
+    
+    width: 40px;
+    text-align: center;
+    background: transparent;
+    margin-bottom: 0; 
+}
+.info-row {
+    display: flex !important;  /* Força o flex */
+    justify-content: space-between; /* Texto na esquerda, valor na direita */
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;               /* Garante que ocupe a largura total */
+}
+
+
+.result-item, .info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #e6eaed;
+}
+
+
+.highlight-green {
+    color: #33b854;
+    font-weight: bold;
+}
+
+.summary-card {
+    background-color: #101d26; 
+    border-radius: 20px;
+    border: 1px solid #152b27; /* Adicionado o ; que faltava */
+    display: flex;             /* Agora o navegador vai ler isso */
+    flex-direction: column;
+    padding: 30px;
+    flex: 0.8;                 /* Deixa o resumo um pouco mais estreito que as outras colunas */
+}
+
+.column {
+    flex: 1;
+    border-right: 1px solid #203d34;
+    padding-right: 40px;
+}
+
+.column:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.results-column {
+    padding-left: 20px; 
+}
+
+.tip-box {
+    background-color: #101d26; /* Verde bem transparente */
+    border: 1px groove #33b854; /* Borda verde sólida */
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #e6eaed;
+}
+
+.per-person-box {
+    margin-top: auto;
+    padding-top: 25px;
+    border-top: 1px solid #203d34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* Alinha tudo no meio horizontalmente */
+    text-align: center;
+    width: 100%;
+}
+
+.per-person-box span {
+    font-size: 16px;
+    color: #e6eaed;
+    margin-bottom: 10px;
+}
+
+#total-per-person {
+    color: #33b854;
+    font-size: 3rem;           /* Aumentei um pouco para dar mais destaque */
+    font-weight: bold;
+    margin: 10px 0 0 0;
 }
